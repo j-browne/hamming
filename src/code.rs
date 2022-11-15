@@ -23,9 +23,9 @@ impl Code {
         if b < 3 {
             None
         } else if b.is_power_of_two() {
-            Some(Self::EHamming(b.log2() + 1))
+            Some(Self::EHamming(b.ilog2() + 1))
         } else if (b + 1).is_power_of_two() {
-            Some(Self::Hamming((b + 1).log2()))
+            Some(Self::Hamming((b + 1).ilog2()))
         } else {
             None
         }
