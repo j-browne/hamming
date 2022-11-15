@@ -59,16 +59,16 @@ mod tests {
     use super::*;
 
     #[test]
-    fn from_block_bits() {
-        assert_eq!(Code::from_block_bits(0), None);
-        assert_eq!(Code::from_block_bits(1), None);
-        assert_eq!(Code::from_block_bits(2), None);
-        assert_eq!(Code::from_block_bits(3), Some(Code::Hamming(2)));
-        assert_eq!(Code::from_block_bits(4), Some(Code::EHamming(3)));
-        assert_eq!(Code::from_block_bits(5), None);
-        assert_eq!(Code::from_block_bits(6), None);
-        assert_eq!(Code::from_block_bits(7), Some(Code::Hamming(3)));
-        assert_eq!(Code::from_block_bits(8), Some(Code::EHamming(4)));
+    fn from_block_size() {
+        assert_eq!(Code::from_block_size(0), None);
+        assert_eq!(Code::from_block_size(1), None);
+        assert_eq!(Code::from_block_size(2), None);
+        assert_eq!(Code::from_block_size(3), Some(Code::Hamming(2)));
+        assert_eq!(Code::from_block_size(4), Some(Code::EHamming(3)));
+        assert_eq!(Code::from_block_size(5), None);
+        assert_eq!(Code::from_block_size(6), None);
+        assert_eq!(Code::from_block_size(7), Some(Code::Hamming(3)));
+        assert_eq!(Code::from_block_size(8), Some(Code::EHamming(4)));
     }
 
     #[test]
