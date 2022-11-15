@@ -39,9 +39,10 @@ pub fn decode(input: &[u8], code: &Code) -> Result<Vec<u8>, Error> {
 
                     // If the overall parity is wrong, but idx == 0, then the overall parity bit
                     // was flipped. If that's the case, we don't care
-                    if in_chunk.iter().fold(false, |a, b| a ^ *b) {
-                        panic!("unrecoverable error");
-                    }
+                    assert!(
+                        !in_chunk.iter().fold(false, |a, b| a ^ *b),
+                        "unrecoverable error"
+                    );
                 }
 
                 for (i, x) in in_chunk.iter().enumerate() {

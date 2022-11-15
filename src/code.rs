@@ -19,7 +19,7 @@ pub enum Code {
 
 impl Code {
     #[must_use]
-    pub fn from_block_size(b: u32) -> Option<Self> {
+    pub const fn from_block_size(b: u32) -> Option<Self> {
         if b < 3 {
             None
         } else if b.is_power_of_two() {
@@ -48,7 +48,7 @@ impl Code {
     }
 
     #[must_use]
-    pub fn parity_bits(&self) -> u32 {
+    pub const fn parity_bits(&self) -> u32 {
         let (Self::Hamming(p) | Self::EHamming(p)) = self;
         *p
     }
