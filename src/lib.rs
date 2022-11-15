@@ -1,4 +1,3 @@
-// TODO: fail gracefully, use errors
 // TODO: docs
 #![feature(int_log)]
 #![cfg_attr(
